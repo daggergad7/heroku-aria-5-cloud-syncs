@@ -97,16 +97,16 @@ UPLOAD_FILE() {
 			RCLONE_EXIT_CODE_2=$?
 		fi
 		if [ -n "${RCLONE_DESTINATION_3}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
-			RCLONE_EXIT_CODE_2=$?
+			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_3}"
+			RCLONE_EXIT_CODE_3=$?
 		fi
 		if [ -n "${RCLONE_DESTINATION_4}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
-			RCLONE_EXIT_CODE_2=$?
+			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_4}"
+			RCLONE_EXIT_CODE_4=$?
 		fi
 		if [ -n "${RCLONE_DESTINATION_5}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
-			RCLONE_EXIT_CODE_2=$?
+			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_5}"
+			RCLONE_EXIT_CODE_5=$?
 		fi
         if [ ${RCLONE_EXIT_CODE} -eq 0 ] && [ ${RCLONE_EXIT_CODE_2} -eq 0 ] && [ ${RCLONE_EXIT_CODE_3} -eq 0 ] && [ ${RCLONE_EXIT_CODE_4} -eq 0 ] && [ ${RCLONE_EXIT_CODE_5} -eq 0 ]; then
             [ -e "${DOT_ARIA2_FILE}" ] && rm -vf "${DOT_ARIA2_FILE}"

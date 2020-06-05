@@ -63,9 +63,6 @@ File path: ${FILE_PATH}
 Upload path: ${UPLOAD_PATH}
 Remote path A: ${REMOTE_PATH}
 Remote path B: ${REMOTE_PATH_2}
-Remote path C: ${REMOTE_PATH_3}
-Remote path D: ${REMOTE_PATH_4}
-Remote path E: ${REMOTE_PATH_5}
 -------------------------- [TASK INFO] --------------------------
 "
 }
@@ -89,26 +86,11 @@ UPLOAD_FILE() {
         rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH}"
         RCLONE_EXIT_CODE=$?
 		RCLONE_EXIT_CODE_2=0
-		if [ -n "${RCLONE_DESTINATION2}" ]; then
+		if [ -n "${RCLONE_DESTINATION_2}" ]; then
 			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_2}"
 			RCLONE_EXIT_CODE_2=$?
 		fi
-        
-		if [ -n "${RCLONE_DESTINATION3}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_3}"
-			RCLONE_EXIT_CODE_3=$?
-		fi
-        
-		if [ -n "${RCLONE_DESTINATION4}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_4}"
-			RCLONE_EXIT_CODE_4=$?
-		fi
-        
-		if [ -n "${RCLONE_DESTINATION5}" ]; then
-			rclone copy -v "${UPLOAD_PATH}" "${REMOTE_PATH_5}"
-			RCLONE_EXIT_CODE_5=$?
-		fi
-        if [ ${RCLONE_EXIT_CODE} -eq 0 ] && [ ${RCLONE_EXIT_CODE_2} -eq 0 ] && [ ${RCLONE_EXIT_CODE_3} -eq 0 ] && [ ${RCLONE_EXIT_CODE_4} -eq 0 ] && [ ${RCLONE_EXIT_CODE_5} -eq 0 ]; then
+        if [ ${RCLONE_EXIT_CODE} -eq 0 ] && [ ${RCLONE_EXIT_CODE_2} -eq 0 ]; then
             [ -e "${DOT_ARIA2_FILE}" ] && rm -vf "${DOT_ARIA2_FILE}"
             rclone rmdirs -v "${DOWNLOAD_PATH}" --leave-root
             echo -e "$(date +"%m/%d %H:%M:%S") ${INFO} Upload done: ${UPLOAD_PATH}"
@@ -149,30 +131,21 @@ fi
 
 if [ "${TOP_PATH}" = "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 普通单文件下载，移动文件到设定的网盘文件夹。
     UPLOAD_PATH="${FILE_PATH}"
-    REMOTE_PATH="${RCLONE_DESTINATION1}/"
-    REMOTE_PATH_2="${RCLONE_DESTINATION2}/"
-    REMOTE_PATH_3="${RCLONE_DESTINATION3}/"
-    REMOTE_PATH_4="${RCLONE_DESTINATION4}/"
-    REMOTE_PATH_5="${RCLONE_DESTINATION5}/"
+    REMOTE_PATH="${RCLONE_DESTINATION}/"
+    REMOTE_PATH_2="${RCLONE_DESTINATION_2}/"
     UPLOAD
     exit 0
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -gt 1 ]; then # BT下载（文件夹内文件数大于1），移动整个文件夹到设定的网盘文件夹。
     UPLOAD_PATH="${TOP_PATH}"
-    REMOTE_PATH="${RCLONE_DESTINATION1}/${REMOVE_DOWNLOAD_PATH%%/*}"
-	REMOTE_PATH_2="${RCLONE_DESTINATION2}/${REMOVE_DOWNLOAD_PATH%%/*}"
-	REMOTE_PATH_3="${RCLONE_DESTINATION3}/${REMOVE_DOWNLOAD_PATH%%/*}"
-	REMOTE_PATH_4="${RCLONE_DESTINATION4}/${REMOVE_DOWNLOAD_PATH%%/*}"
-	REMOTE_PATH_5="${RCLONE_DESTINATION5}/${REMOVE_DOWNLOAD_PATH%%/*}"
+    REMOTE_PATH="${RCLONE_DESTINATION}/${REMOVE_DOWNLOAD_PATH%%/*}"
+	REMOTE_PATH_2="${RCLONE_DESTINATION_2}/${REMOVE_DOWNLOAD_PATH%%/*}"
     CLEAN_UP
     UPLOAD
     exit 0
 elif [ "${TOP_PATH}" != "${FILE_PATH}" ] && [ $2 -eq 1 ]; then # 第三方度盘工具下载（子文件夹或多级目录等情况下的单文件下载）、BT下载（文件夹内文件数等于1），移动文件到设定的网盘文件夹下的相同路径文件夹。
     UPLOAD_PATH="${FILE_PATH}"
-    REMOTE_PATH="${RCLONE_DESTINATION1}/${REMOVE_DOWNLOAD_PATH%/*}"
-	REMOTE_PATH_2="${RCLONE_DESTINATION2}/${REMOVE_DOWNLOAD_PATH%/*}"
-	REMOTE_PATH_3="${RCLONE_DESTINATION3}/${REMOVE_DOWNLOAD_PATH%/*}"
-	REMOTE_PATH_4="${RCLONE_DESTINATION4}/${REMOVE_DOWNLOAD_PATH%/*}"
-	REMOTE_PATH_5="${RCLONE_DESTINATION5}/${REMOVE_DOWNLOAD_PATH%/*}"
+    REMOTE_PATH="${RCLONE_DESTINATION}/${REMOVE_DOWNLOAD_PATH%/*}"
+	REMOTE_PATH_2="${RCLONE_DESTINATION_2}/${REMOVE_DOWNLOAD_PATH%/*}"
     UPLOAD
     exit 0
 fi

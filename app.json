@@ -15,24 +15,12 @@
 			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",
 			"required": false
 		},
-		"RCLONE_DESTINATION1": {
+		"RCLONE_DESTINATION": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]",
 			"required": false,
 			"value": "Google:tmp"
 		},
-		"RCLONE_DESTINATION2": {
-			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
-			"required": false
-		},
-		"RCLONE_DESTINATION3": {
-			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
-			"required": false
-		},
-		"RCLONE_DESTINATION4": {
-			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
-			"required": false
-		},
-		"RCLONE_DESTINATION5": {
+		"RCLONE_DESTINATION_2": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false
 		}

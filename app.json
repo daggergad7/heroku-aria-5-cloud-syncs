@@ -23,6 +23,18 @@
 		"RCLONE_DESTINATION_2": {
 			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false
+		},
+		"RCLONE_DESTINATION_3": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION_4": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION_5": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
 		}
 	},
 	"buildpacks": [

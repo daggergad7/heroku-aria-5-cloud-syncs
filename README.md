@@ -6,7 +6,7 @@
 
 ## Forked changes 
 -Supported upto 5 drives to sync to
-#### forked from here: https://github.com/maple3142/heroku-aria2c
+#### forked from: https://github.com/maple3142/heroku-aria2c
 #### used materials and ideas from https://github.com/xinxin8816/heroku-ariang-21vianet
 
 ## Optionally sync downloaded file to your cloud drive with Rclone

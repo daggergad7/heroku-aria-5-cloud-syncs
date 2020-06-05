@@ -1,7 +1,7 @@
 {
-	"name": "Heroku aria2c",
+	"name": "Heroku aria2c fork",
 	"description": "Run aria2c on heroku",
-	"repository": "https://github.com/maple3142/heroku-aria2c",
+	"repository": "https://github.com/daggergad7/heroku-aria2c",
 	"keywords": ["aria2c"],
 	"env": {
 		"HEROKU_APP_NAME": {
@@ -15,8 +15,25 @@
 			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",
 			"required": false
 		},
-		"RCLONE_DESTINATION": {
-			"description": "Path to store your file in your Rclone drive. Must start with a forward slash.",
+		"RCLONE_DESTINATION1": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]",
+			"required": false,
+			"value": "Google:tmp"
+		},
+		"RCLONE_DESTINATION2": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION3": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION4": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION5": {
+			"description": "Rclone destination path, format \"[drivename A]:[remove path A]\"",
 			"required": false
 		}
 	},

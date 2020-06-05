@@ -5,9 +5,9 @@
 > Do not overuse it, or your account might be banned by Heroku.
 
 ## Forked changes 
-### Original here: https://github.com/maple3142/heroku-aria2c
+-Supported upto 5 drives to sync to
+### forked from here: https://github.com/maple3142/heroku-aria2c
 ### used materials and ideas from https://github.com/xinxin8816/heroku-ariang-21vianet
--Added 5 drives to sync from
 
 ## Optionally sync downloaded file to your cloud drive with Rclone
 

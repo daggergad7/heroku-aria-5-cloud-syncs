@@ -1,4 +1,4 @@
-# Heroku aria2c
+# Heroku aria2c (Sync upto 5 drives modification)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -6,8 +6,8 @@
 
 ## Forked changes 
 -Supported upto 5 drives to sync to
-### forked from here: https://github.com/maple3142/heroku-aria2c
-### used materials and ideas from https://github.com/xinxin8816/heroku-ariang-21vianet
+#### forked from here: https://github.com/maple3142/heroku-aria2c
+#### used materials and ideas from https://github.com/xinxin8816/heroku-ariang-21vianet
 
 ## Optionally sync downloaded file to your cloud drive with Rclone
 

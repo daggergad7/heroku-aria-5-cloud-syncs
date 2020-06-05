@@ -43,7 +43,7 @@ export RCLONE_RETRIES_SLEEP=30s
 
 # RCLONE 异常退出重试次数
 # RCLONE Abnormal exit retry count
-RETRY_NUM=3
+RETRY_NUM=6
 
 #============================================================
 
@@ -79,7 +79,7 @@ CLEAN_UP() {
 
 UPLOAD_FILE() {
     RETRY=0
-	echo "$(($(cat numUpload)+1))" > numUpload # Plus 1
+	echo "$(($(cat numUpload)+4))" > numUpload # Plus 1
     while [ ${RETRY} -le ${RETRY_NUM} ]; do
         [ ${RETRY} != 0 ] && (
             echo
@@ -115,7 +115,7 @@ UPLOAD_FILE() {
 			rclone delete -v "${UPLOAD_PATH}"
             break
         else
-            RETRY=$((${RETRY} + 1))
+            RETRY=$((${RETRY} + 4))
             [ ${RETRY} -gt ${RETRY_NUM} ] && (
                 echo
                 echo -e "$(date +"%m/%d %H:%M:%S") ${ERROR} Upload failed: ${UPLOAD_PATH}"

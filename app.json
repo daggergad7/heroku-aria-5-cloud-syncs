@@ -1,7 +1,7 @@
 {
 	"name": "Heroku aria2c fork",
 	"description": "Run aria2c on heroku",
-	"repository": "https://github.com/daggergad7/heroku-aria2c",
+	"repository": "https://github.com/daggergad7/heroku-aria-5-cloud-syncs",
 	"keywords": ["aria2c"],
 	"env": {
 		"HEROKU_APP_NAME": {

@@ -1,43 +1,30 @@
 #!/bin/bash
 # Aria2 Autoupload.sh by P3TERX, adapt Heroku-AriaNG by xinxin8816 and Kwok1am.
 
-## 文件过滤 File Filter ##
-
-# 限制最低上传大小，仅 BT 多文件下载时有效，用于过滤无用文件。低于此大小的文件将被删除，不会上传。
 # Limit the minimum upload size, which is only valid when downloading multiple BT files, and is used to filter useless files. Files below this size will be deleted and will not be uploaded.
 #MIN_SIZE=10m
 
-# 保留文件类型，仅 BT 多文件下载时有效，用于过滤无用文件。其它文件将被删除，不会上传。
 # Keep the file type, only effective when downloading multiple BT files, used to filter useless files. Other files will be deleted and will not be uploaded.
 #INCLUDE_FILE='mp4,mkv,rmvb,mov'
 
-# 排除文件类型，仅 BT 多文件下载时有效，用于过滤无用文件。排除的文件将被删除，不会上传。
 # Exclude file types, valid only when downloading multiple BT files, used to filter useless files. Excluded files will be deleted and will not be uploaded.
 #EXCLUDE_FILE='html,url,lnk,txt,jpg,png'
 
-## 高级设置 advanced settings ##
-
-# RCLONE 配置文件路径
 # RCLONE Configuration file path
 export RCLONE_CONFIG=rclone.conf
 
-# RCLONE 并行上传文件数，仅对单个任务有效。
 # RCLONE The number of files uploaded in parallel is only valid for a single task.
 #export RCLONE_TRANSFERS=4
 
-# RCLONE 块的大小，默认5M，理论上是越大上传速度越快，同时占用内存也越多。如果设置得太大，可能会导致进程中断。
 # RCLONE The size of the block, the default is 5M. Theoretically, the larger the upload speed, the faster it will occupy more memory. If the setting is too large, the process may be interrupted.
 export RCLONE_CACHE_CHUNK_SIZE=3M
 
-# RCLONE 块可以在本地磁盘上占用的总大小，默认10G。
 # RCLONE The total size that the block can occupy on the local disk, the default is 10G.
 #export RCLONE_CACHE_CHUNK_TOTAL_SIZE=10G
 
-# RCLONE 上传失败重试次数，默认 3
 # RCLONE Upload failed retry count, the default is 3
 #export RCLONE_RETRIES=3
 
-# RCLONE 上传失败重试等待时间，默认禁用，单位 s, m, h
 # RCLONE Upload failure retry wait time, the default is disabled, unit s, m, h
 export RCLONE_RETRIES_SLEEP=30s
 

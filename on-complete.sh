@@ -7,17 +7,8 @@
 # RCLONE Configuration file path
 export RCLONE_CONFIG=rclone.conf
 
-# RCLONE The number of files uploaded in parallel is only valid for a single task.
-#export RCLONE_TRANSFERS=4
-
 # RCLONE The size of the block, the default is 5M. Theoretically, the larger the upload speed, the faster it will occupy more memory. If the setting is too large, the process may be interrupted.
 export RCLONE_CACHE_CHUNK_SIZE=3M
-
-# RCLONE The total size that the block can occupy on the local disk, the default is 10G.
-#export RCLONE_CACHE_CHUNK_TOTAL_SIZE=10G
-
-# RCLONE Upload failed retry count, the default is 3
-#export RCLONE_RETRIES=3
 
 # RCLONE Upload failure retry wait time, the default is disabled, unit s, m, h
 export RCLONE_RETRIES_SLEEP=30s

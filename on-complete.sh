@@ -4,12 +4,6 @@
 # Limit the minimum upload size, which is only valid when downloading multiple BT files, and is used to filter useless files. Files below this size will be deleted and will not be uploaded.
 #MIN_SIZE=10m
 
-# Keep the file type, only effective when downloading multiple BT files, used to filter useless files. Other files will be deleted and will not be uploaded.
-#INCLUDE_FILE='mp4,mkv,rmvb,mov'
-
-# Exclude file types, valid only when downloading multiple BT files, used to filter useless files. Excluded files will be deleted and will not be uploaded.
-#EXCLUDE_FILE='html,url,lnk,txt,jpg,png'
-
 # RCLONE Configuration file path
 export RCLONE_CONFIG=rclone.conf
 

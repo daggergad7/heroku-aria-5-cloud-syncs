@@ -39,11 +39,15 @@ app.get('/', (req, res) => {
 <input id="secret" type="password">
 <button id="panel">Go to AriaNg panel</button>
 <button id="downloads">View downloaded files</button>
+<button id="aria-install">Install Aria</button>
 <script>
 panel.onclick=function(){
 	open('/ariang/#!/settings/rpc/set/wss/'+location.hostname+'/443/jsonrpc/'+btoa(secret.value),'_blank')
 }
 downloads.onclick=function(){
+	open('/downloads/'+btoa(secret.value)+'/')
+}
+aria-install.onclick=function(){
 	open('/downloads/'+btoa(secret.value)+'/')
 }
 </script>

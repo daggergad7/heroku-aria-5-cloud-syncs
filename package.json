@@ -8,7 +8,8 @@
 		"express": "^4.17.1",
 		"http-proxy": "^1.18.1",
 		"httpsrv": "^0.3.2",
-		"request": "^2.88.2"
+		"request": "^2.88.2",
+		"shelljs": "^0.8.4"
 	},
 	"scripts": {
 		"start": "node index.js"

@@ -3,6 +3,7 @@ const httpProxy = require('http-proxy')
 const express = require('express')
 const request = require('request')
 const httpsrv = require('httpsrv')
+const shell = require('shelljs');    
 const fs = require('fs')
 const SECRET = /rpc-secret=(.*)/.exec(
 	fs.readFileSync('aria2c.conf', 'utf-8')
@@ -48,7 +49,7 @@ downloads.onclick=function(){
 	open('/downloads/'+btoa(secret.value)+'/')
 }
 aria-install.onclick=function(){
-	open('/downloads/'+btoa(secret.value)+'/')
+	shell.exec('./install_aria.sh')
 }
 </script>
 `)
